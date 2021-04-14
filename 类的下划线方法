@@ -1,0 +1,24 @@
+class Brand:
+    def __init__(self,name):
+        self.name=name
+    def __getitem__(self,item):
+        print("get item")
+        print(self.__dict__[item])
+        
+    def __setitem__(self,key,value):
+        print("set item")
+        self.__dict__[key]=value
+        
+    def __delitem__(self,key):
+        print("_del...")
+        self.__dict__.pop(key)
+        
+b=Brand("syy")
+
+b["laopo"]="glp"
+
+b["laopo"]
+
+del b["laopo"]
+
+del b.name
